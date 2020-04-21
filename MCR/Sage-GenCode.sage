@@ -954,7 +954,7 @@ def gen_csidh(V,perm,m,ls,bounds):
     m_pos = 0       # Round number. Only used to derive function names for the strategies
     strat_names = [None for i in range(len(V))]
 
-    for pair_ind, (S, per) in enumerate(pairs):
+    for pair_ind, (S, per) in list(enumerate(pairs)):
         # 'S' is now the current strategy, 'per' is the current permutation
         # This loop will generate the code for each strategy
         if pair_ind >= sum(m[:m_pos+1]):
@@ -1083,7 +1083,7 @@ def gen_csidh(V,perm,m,ls,bounds):
             print('\n}')
         else:
             # If the code for the strategy/permutation has already been generated, call that code instead of duplicating
-            strat_names[pair_ind] = strat_names[strat_names.index((S,per))]
+            strat_names[pair_ind] = strat_names[pairs.index((S,per))]
 
 
 
@@ -1114,7 +1114,7 @@ def gen_csidh(V,perm,m,ls,bounds):
     print('\n\tproj A = { in->A, fp_1 };\t // Projectivize the curve coefficient\n')
 
     # Strategy function calls
-    for i, (S, per) in enumerate(pairs):
+    for i in range(len(V)):
         print('\tstrat' + str(strat_names[i][0]) + str(strat_names[i][1]) + '(&A, e, counter, &isog_counter);')
     print('\n')
 
@@ -1192,7 +1192,6 @@ def gen_csidh(V,perm,m,ls,bounds):
 
     sys.stdout = orig_stdout
     f.close()
-
 
 
 gen_csidh(Vs,perms,m,ls,bounds)
