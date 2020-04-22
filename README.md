@@ -11,6 +11,7 @@ Authors:
   -Reza Azarderakhsh
 
 The code contained here is based on two previous implementations:
+
   -That of Daniel Cervantes-Vazquez, Mathilde Chenu, Jesus-Javier Chi-Domınguez, Luca De Feo, Francisco Rodrıguez-Henrıquez, and Benjamin Smith (CCCDRS) which accompanies the paper "Stronger and Faster Side-Channel Protections for CSIDH". This implementation uses the two-point method (signed key values) and multiplication-based strategies. We provide header files which can be used as drop-in replacements for the original code of CCCDRS, resulting in a performance increase.
   
   -That of Meyer, Campos, and Reith (MCR) which accompanies the paper "On Lions and Elligators: An efficient constant-time implementation of CSIDH". This implementation uses the single-point technique (non-negative key values) and is compatible with any set of valid strategies, permutations, and bound vectors. We provide a Sage script which adapts the implementation of MCR to the desired parameter set.
