@@ -1,5 +1,5 @@
 Part of the implementation for the paper "Further Optimizations of CSIDH: A SystematicApproach to Efficient Strategies, Permutations,and Bound Vectors". This code was build on top of that of Meyer, Campos, and Reith given in the paper "On Lions and Elligators: An efficient constant-time implementation of CSIDH"
 
-The code is compatible with any collection of valid strategies, permutations, and bound vectors. Write them into "Sage-GenCode.sage" and compile that file with Sage. This will create (update) the "csidh.c" file which performs the group action. Run Make and execute.
+The code is compatible with any collection of valid strategies, permutations, and bound vectors. Valid parameters can be generated using the "MCR scripts" in this repository. Write the parameter sets into "Sage-GenCode.sage" and compile that file with Sage. This will create (update) the "csidh.c" file which performs the group action. Run Make and execute.
 
 This implementation uses the single point method with non-negative key values.
