@@ -904,7 +904,7 @@ def uint_conv(n):
     elif len(x) < 8:
         while len(x) != 8:
             x.append(0)
-    return [ '0x' + hex(i) for i in x ]
+    return [ '0x' + Integer(i).hex() for i in x ]
 
 
 
